@@ -1,0 +1,468 @@
+/*
+For the hero banner this is what I need. Please check the 3 windows below the header, 
+when you scroll down you only see one window and a new title appears in place of the other 2 cards.
+
+https://www.tidio.com
+
+I want the same idea for our hero: it starts like the one on the left on figma, 
+and after scrolling a little you get to something like the one on the right. Hero image does not need 
+to fade to white towards the title
+
+Then, on the guitar banner, I would like the left black banner and copy, to move on a different 
+speed than the guitar banner when scrolling (parallax)
+
+and lastly, the +400,000 songs at the bottom, I would like an easy count up effect
+
+that's pretty much it
+
+the hero banner can end up something like the one I just did on the right on Figma, with no 
+fading to white
+*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Esteban&display=swap");
+html{
+    box-sizing: border-box;
+}
+*, *::after,*::before{
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: 'Montserrat';
+}
+
+/* hero */
+
+.hero__new{
+    min-height: 100vh;
+    
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    background-image: url("../img/Group\ 2016.png");
+    background-position: -50px 70px;
+    background-repeat: repeat-x;
+    background-size:  auto 100%;
+    overflow-y: visible;
+    margin-bottom: 20.5rem;
+}
+.hero__article{
+  display: block;
+  padding: 1.5rem;
+
+  background-color: white;
+  text-align: center;
+  transform: translateY(250px);
+
+}
+.shownow{
+  opacity: 1;
+  pointer-events: all;
+}
+
+
+@media (min-width:627px) {
+  .hero__new{
+    min-height: 100vh;
+  }
+  .hero__article{
+    width: 100%;
+  }
+  
+}
+@media (min-width:927px) {
+  .hero__new{
+
+
+    background-position: top right;
+    background-repeat: repeat-x;
+    background-size: 80%;
+    margin-bottom: 3.5rem;
+}
+.hero__article{
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  max-width: 40%;
+  background-color: white;
+  padding: 0 2rem;
+
+  box-shadow:
+  9.6px 3.4px 7.2px rgba(255, 255, 255, 0.382),
+  24.3px 8.7px 18.3px rgba(255, 255, 255, 0.527),
+  49.6px 17.7px 37.4px rgba(255, 255, 255, 0.628),
+  102.2px 36.5px 77px rgba(253, 253, 253, 0.699),
+  280px 100px 211px rgba(255, 255, 255, 0.72)
+;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: 300ms ease-in-out;
+  transform: translateY(0px);
+}
+.shownow{
+  opacity: 1;
+  pointer-events: all;
+}
+}
+/* hero */
+
+/* introduction */
+.introduction__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0 0.713rem;
+    text-align: center;
+
+}
+.introduction__content h1{
+
+  padding-bottom: 1.5rem;
+}
+.introduction__content h2{
+  font-weight: 700;
+  padding: 1.5rem 0;
+}
+
+@media (min-width: 992px) {
+    .introduction{
+        display: flex;
+        min-width: 100%;
+        justify-content: center;
+        align-items: center;
+        margin: 8.125rem 0;
+    }
+    .introduction__content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 976px;
+    
+        text-align: center;
+    
+    }
+    #introduction__content_header{
+        font-weight: 300;
+        font-size: 60px;
+        line-height: 70px;
+        max-width: 100%;
+    }
+    .introduction__content p{
+        padding: 2.5rem 2rem;
+    
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 34px;
+    }
+    .introduction__content h2{
+        font-weight: 600;
+    }
+  }
+
+/* introduction */
+
+/* guitar banner */
+.guitar__banner{
+  position: relative;
+
+  padding: 4.4rem 0;
+  display: block;
+}
+
+.card__left h1{
+    color: white;
+}
+.card__right{
+  display: block;
+  max-width: 950px;
+  min-height: 278px;
+
+
+  background-image: url("../img/Captura\ de\ pantalla\ 2022-02-22\ a\ las\ 19.11\ 1.png"), linear-gradient(90deg, #000000 -17.39%, rgba(0, 0, 0, 0) 40.4%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
+  
+
+
+}
+
+.card__left{
+  position: absolute;
+  top: 280px;
+
+
+  min-height: 203.26px;
+  min-width: 205.250px;
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: black;
+  border-radius: 10.5271px;
+}
+.card__left h1{
+  max-width: 12ch;
+}
+.guitar__banner_text-container{
+  margin-top: 14.375rem;
+  padding: 0 1.525rem;
+}
+@media (min-width: 552px) {
+  .card__left{
+
+
+
+    min-width: 333px;
+    padding-right: 9rem;
+
+    background-color: black;
+    border-radius: 10px;
+}
+
+}
+@media (min-width: 632px){
+  .card__right{
+    display: block;
+    min-height: 400px;
+    margin-right: 0;
+    margin-left: auto;
+
+    border-radius: 10px;
+    background-size: 150% auto;
+    background-position: 100%;
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+.card__left{
+  min-width: 433px;
+  top: 350px;
+}
+}
+
+@media (min-width: 992px) {
+    .guitar__banner{
+        padding: 0 4rem;
+    }
+    .card__left{
+        position: absolute;
+        top: 60px;
+
+        padding-right: 0;
+        min-height: 397px;
+        max-width: 433px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background-color: black;
+        border-radius: 18px;
+    }
+    .card__left h1{
+      font-weight: 300;
+        text-align: right;
+        min-width: 11ch;
+        transform: translateX(50px);
+    }
+    .card__right{
+      min-height: 510px;
+
+      background-size: 90% auto;
+      background-position: center right ;
+      border-radius: 18px;
+
+  }
+
+    .guitar__banner_text-container{
+        padding: 4rem;
+        margin: 0;
+    }
+    .guitar__banner_text-container p{
+        max-width: 60ch;
+
+    }
+
+  }
+  @media (min-width: 1228px) {
+    .card__right{
+  
+  
+  
+  
+  
+  
+      background-size:  auto 100%;
+      background-position: 180%;
+  
+  }
+  }
+  @media (min-width: 1752px) {
+    .card__right{
+      display: block;
+      max-width: 80%;
+      min-height: 700px;
+      top:0px;
+      left:0px;
+      width: 100%;
+      height: 100%;
+    
+  
+      background-size: 100% 110%;
+      background-blend-mode: multiply;
+      
+    
+    
+    }
+    .card__left{
+      position: absolute;
+      top: 120px;
+
+      padding-right: 0;
+      min-height: 447px;
+      max-width: 483px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background-color: black;
+      border-radius: 18px;
+  }
+  }
+  /* guitar banner */
+
+  /* mission section */
+  #landing__counter{
+    min-width: 136px;
+  }
+  #mission__logo{
+    max-width: 185px;
+  }
+  .mission{
+    padding: 0 0.713rem;
+  }
+  .mission__left{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    margin-bottom: 4rem;
+  }
+  .mission__left > *{
+    margin-bottom: 0;
+  }
+  .mission__left h1{
+    font-size: 60px;
+  }
+  .mission__left h2{
+    font-size: 40px;
+  }
+  .mission__right h1{
+    font-size: 34px;
+  }
+  @media (min-width: 632px){
+    #mission__logo{
+      max-width: 380px;
+    }
+    .mission__left h1 {
+      font-weight: 400;
+      font-size: 128.935px;
+      line-height: 126px;
+    }
+  }
+  @media (min-width: 992px){
+
+      .mission{
+        display: flex;
+        padding-left: 4rem;
+        padding-right: 0;
+      }
+      .mission > * {
+          flex: 1;
+      }
+      .mission__left{
+        position: relative;
+        z-index: 1;
+
+          margin-right: -2rem;
+          margin-bottom: 0;
+      }
+      .mission__left > *{
+          line-height: 45px;
+      }
+
+      .mission__span{
+        font-size: 2.468rem;
+        font-weight: 300;
+      }
+      .mission__h2{
+        font-weight: 400;
+        font-size: 88px;
+        line-height: 83px;
+      }
+      .mission__right{
+        position: relative;
+        z-index: 0;
+
+          padding: 4.375rem;
+        background: rgba(237, 242, 244, 0.5);
+        border-radius: 10px;
+      }
+      .mission__right h1{
+          font-size: 60px;
+        margin-bottom: 4.4rem;
+    
+        /* or 117% */
+
+        letter-spacing: -0.4409px;
+      }
+      .mission__right p{
+          
+        max-width: 42ch;
+      }
+  }
+
+  /* mission section */
+
+
+  /* join us */
+  .join__us{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 13.125rem;
+    
+  }
+  .join__us h1{
+    font-weight: 300;
+   }
+   .join__us button{
+    padding: 1rem 1.8rem;
+     margin-bottom: 9.188rem;
+    background-color: #22D3C2;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+  @media (min-width: 992px){
+   .join__us h1{
+    
+    margin-bottom: 3rem;
+   }
+
+}
+  /* join us */
