@@ -53,9 +53,8 @@ body {
 }
 @media (min-width: 927px) {
   .hero__new {
-    background-position: top right;
+
     background-repeat: repeat-x;
-    background-size: 80%;
     margin-bottom: 0.5rem;
 
     overflow-y: hidden;
@@ -91,6 +90,11 @@ body {
     pointer-events: all;
   }
 }
+@media (min-width:1200px){
+  .hero__new{
+    background-position: top right;
+  }
+}
 /* hero */
 
 /* introduction */
@@ -113,6 +117,16 @@ body {
 .bold__span {
   font-weight: 500;
 }
+@media (min-width: 302px){
+  .introduction{
+    padding: 0 1rem;
+  }
+}
+@media (min-width: 502px){
+  .introduction{
+    padding: 0 ;
+  }
+}
 @media (min-width: 992px) {
   .introduction {
     display: flex;
@@ -120,7 +134,7 @@ body {
     justify-content: center;
     align-items: center;
     margin-bottom: 8.125rem;
-    margin-top: 5rem;
+    margin-top: 2rem;
   }
   .introduction__content h1 {
     position: relative;
@@ -177,10 +191,14 @@ body {
   background-size: cover;
   background-blend-mode: multiply;
 }
-
+.cards{
+  position: relative;
+  min-width: 100%;
+  
+}
 .card__left {
   position: absolute;
-  top: 280px;
+  top: 70%;
 
   min-height: 203.26px;
   min-width: 205.25px;
@@ -204,8 +222,6 @@ body {
     min-width: 333px;
     padding-right: 9rem;
 
-    background-color: black;
-    border-radius: 10px;
   }
 }
 @media (min-width: 632px) {
@@ -216,8 +232,8 @@ body {
     margin-left: auto;
 
     border-radius: 10px;
-    background-size: 150% auto;
-    background-position: 100%;
+    background-size:  cover;
+    background-position: center;
     background-blend-mode: multiply;
     background-attachment: fixed;
     overflow: hidden;
@@ -230,14 +246,16 @@ body {
 
 @media (min-width: 992px) {
   .guitar__banner {
-    padding: 0 4rem;
+    padding: 0 2rem;
   }
   .card__left {
     position: absolute;
-    top: 60px;
-
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
     padding-right: 0;
-    min-height: 397px;
+    max-height: 40%;
+    min-height: 60%;
     max-width: 433px;
     display: flex;
     align-items: center;
@@ -254,8 +272,8 @@ body {
   }
   .card__right {
     min-height: 510px;
-
-    background-size: 90% auto;
+    max-width: 85%;
+    background-size: 140% auto;
     background-position: center right;
     border-radius: 18px;
   }
@@ -268,10 +286,18 @@ body {
     max-width: 60ch;
   }
 }
+@media (min-width: 1128px) {
+  .card__right {
+    background-size: 140% auto;
+    background-position: center right;
+  }
+}
 @media (min-width: 1228px) {
   .card__right {
     background-size: auto 100%;
-    background-position: 180%;
+  }
+  .guitar__banner{
+    padding: 0 4rem ;
   }
 }
 @media (min-width: 1752px) {
@@ -304,7 +330,6 @@ body {
 }
 /* guitar banner */
 
-/* mission section */
 #landing__counter {
   min-width: 136px;
 }
@@ -330,8 +355,15 @@ body {
 .mission__left h2 {
   font-size: 40px;
 }
-.mission__right h1 {
-  font-size: 34px;
+
+@media (min-width: 402px) {
+  #mission__logo {
+    max-width: 280px;
+  }
+  .mission__left h1 {
+    font-weight: 400;
+    font-size: 80.935px;
+  }
 }
 @media (min-width: 632px) {
   #mission__logo {
@@ -341,6 +373,7 @@ body {
     font-weight: 400;
     font-size: 128.935px;
     line-height: 126px;
+    text-align: right;
   }
 }
 @media (min-width: 992px) {
@@ -429,6 +462,7 @@ body {
 }
 .join__us h1 {
   font-weight: 300;
+  margin-bottom: 1.5rem;
 }
 .join__us button {
   padding: 1rem 1.8rem;
