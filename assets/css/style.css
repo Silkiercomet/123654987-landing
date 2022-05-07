@@ -373,7 +373,6 @@ body {
     font-weight: 400;
     font-size: 128.935px;
     line-height: 126px;
-    text-align: right;
   }
 }
 @media (min-width: 992px) {
@@ -448,6 +447,11 @@ body {
 #landing__counter{
   min-width: 150px;
     text-align: right;
+}
+@media (min-width:1416px){
+  .mission__left h1{
+    text-align: right;
+  }
 }
 /* mission section */
 
