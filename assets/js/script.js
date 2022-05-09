@@ -2,6 +2,7 @@
 const scrollElement = document.getElementById("landing__counter");
 const heroShow = document.querySelector(".hero__article");
 const counterContainer = document.getElementById("counter");
+let timeOut = f => f;
 let countFlag = false;
 let heroFlag = true;
 
@@ -19,7 +20,7 @@ const handleScrollAnimationCounter = () => {
     counterContainer.classList.add("showcounter")
     countFlag = true;
 
-    animateValue(scrollElement, 250000, 400000, 1800);
+    animateValue(scrollElement, 300000, 400000, 1200);
   }
 };
 
@@ -40,11 +41,16 @@ function animateValue(obj, start, end, duration) {
 
 window.addEventListener("scroll", () => {
   if(heroFlag && window.screen.width > 700){
+    clearTimeout(timeOut)
       heroFlag = false
       heroShow.classList.add("shownow")
   }else if(document.body.getBoundingClientRect().top === 0 && heroFlag === false){
+
+    timeOut = setTimeout(()=> {
+      heroShow.classList.remove("shownow")
+    }, 7000)
+  }else if(heroShow.getBoundingClientRect().bottom < 100){
     heroFlag = true
-    heroShow.classList.remove("shownow")
   }
   handleScrollAnimationCounter();
 });
