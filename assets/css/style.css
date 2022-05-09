@@ -345,6 +345,12 @@ body {
 
   }
 }
+@media (min-width: 3441px) {
+  .card__right {
+    min-height: 1300px;
+  }
+
+}
 /* guitar banner */
 
 #landing__counter {
